@@ -31,6 +31,9 @@ def _fits_gate(line):
         return False
     if "\n" in line or "\r" in line:
         return False
+    lowered = line.lower()
+    if "http://" in lowered or "https://" in lowered or "www." in lowered:
+        return False
     return True
 
 
